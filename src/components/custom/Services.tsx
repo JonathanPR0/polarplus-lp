@@ -30,7 +30,10 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-24 bg-gradient-to-b from-background to-muted/30" id="services">
+    <section
+      className="py-20 lg:py-24 bg-gradient-to-b from-background to-muted/30"
+      id="services"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <motion.div
@@ -67,8 +70,9 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.3 }}
           >
-            Serviços profissionais de climatização sob medida para suas necessidades, garantindo
-            conforto e eficiência ideais para seu espaço.
+            Serviços profissionais de climatização sob medida para suas
+            necessidades, garantindo conforto e eficiência ideais para seu
+            espaço.
           </motion.p>
         </motion.div>
 
