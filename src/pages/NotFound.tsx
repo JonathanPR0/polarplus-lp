@@ -2,7 +2,6 @@ import Button from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Undo2 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 interface Snowflake {
   id: number;
@@ -16,15 +15,14 @@ interface Snowflake {
 }
 
 const NotFound = () => {
-  const location = useLocation();
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
 
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
-      location.pathname,
+      window.location.pathname,
     );
-  }, [location.pathname]);
+  }, []);
 
   // Generate snowflakes
   useEffect(() => {
@@ -36,7 +34,7 @@ const NotFound = () => {
           x: Math.random() * window.innerWidth,
           y: Math.random() * -window.innerHeight,
           size: Math.random() * 3 + 2,
-          speed: Math.random() * 0.8 + 0.3, // Velocidade reduzida: 0.3-1.1 (era 1-3)
+          speed: Math.random() * 1.5,
           opacity: Math.random() * 0.6 + 0.4,
           rotation: Math.random() * 360,
           rotationSpeed: Math.random() * 1 - 0.5, // Rotação mais lenta: -0.5 a 0.5 (era -1 a 1)
@@ -64,7 +62,7 @@ const NotFound = () => {
       );
     };
 
-    const interval = setInterval(animateSnowflakes, 80); // Intervalo aumentado: 80ms (era 50ms)
+    const interval = setInterval(animateSnowflakes, 30); // Intervalo aumentado: 80ms (era 50ms)
     return () => clearInterval(interval);
   }, []);
 

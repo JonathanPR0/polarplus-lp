@@ -73,38 +73,11 @@ export const Hero = () => {
                   Quem somos?
                 </motion.button>
               </motion.div>
-
-              {/* Decorative elements */}
-              <motion.div
-                className="absolute top-10 right-10 w-20 h-20 bg-white/10 rounded-full blur-xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              <motion.div
-                className="absolute bottom-20 left-10 w-16 h-16 bg-emerald-400/20 rounded-full blur-lg"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.2, 0.5, 0.2],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-              />
             </div>
 
             {/* Image Section */}
             <motion.div
-              className="flex-1 relative min-h-[300px] sm:min-h-[400px] lg:min-h-[600px] order-first lg:order-last"
+              className="flex-1 relative min-h-[30dvh] sm:min-h-[400px] lg:min-h-[600px] order-first lg:order-last"
               initial={{ opacity: 0, x: 0 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}

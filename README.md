@@ -68,17 +68,16 @@ Landing page profissional para serviços de climatização, desenvolvida com Rea
 
 ## ☁️ Hospedagem & Deploy
 
-Esta aplicação foi hospedada no **Amazon S3** como site estático, garantindo alta disponibilidade, escalabilidade e performance. O deploy foi automatizado via **CI/CD**, permitindo que cada alteração aprovada no repositório seja publicada automaticamente no ambiente de produção.
+Esta aplicação foi hospedada no **Amazon S3** como site estático, garantindo alta disponibilidade, escalabilidade e performance. O deploy é totalmente automatizado via **GitHub Actions**, permitindo que cada alteração aprovada no repositório seja publicada automaticamente no ambiente de produção.
 
 ### Como funciona o fluxo de deploy:
 
 1. **Build do projeto:**
    - O comando `npm run build` gera os arquivos otimizados em `/dist`.
 2. **CI/CD:**
-   - O workflow de **CI** (GitHub Actions) realiza verificação de formatação, lint e typecheck a cada push ou pull request na branch principal.
-   - O build e publicação dos arquivos estáticos no S3 são realizados automaticamente pelo **AWS CodeBuild**.
+   - O workflow de **CI/CD** é realizado pelo **GitHub Actions**, que executa verificação de formatação, lint, typecheck, build, upload dos arquivos estáticos para o S3 e invalidação do cache no CloudFront a cada push ou pull request na branch principal.
    - O bucket S3 está configurado para servir o site estático.
-   - O site é distribuído globalmente pelo **Amazon CloudFront**, garantindo CDN, HTTPS
+   - O site é distribuído globalmente pelo **Amazon CloudFront**, garantindo CDN, HTTPS e alta performance.
 3. **Atualização automática:**
    - Cada push na branch principal dispara o pipeline e atualiza o site em produção.
 

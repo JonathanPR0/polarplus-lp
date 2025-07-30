@@ -8,6 +8,15 @@ import Button from "../ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hasShadow, setHasShadow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasShadow(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { label: "Serviços", href: "services" },
@@ -83,7 +92,11 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex items-center justify-center font-medium sticky top-0 w-full z-50 bg-background">
+      <header
+        className={`flex items-center justify-center font-medium sticky top-0 w-full z-50 bg-background transition-shadow duration-300 ${
+          hasShadow ? "shadow-lg" : ""
+        }`}
+      >
         <div className="container mx-auto px-4 sm:px-6 w-full max-w-7xl">
           {/* Main navigation */}
           <div className="flex items-center justify-between py-3 md:py-4">
