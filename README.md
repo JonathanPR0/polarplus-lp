@@ -1,62 +1,91 @@
 # Polar Plus - Landing Page
 
-Uma landing page profissional para serviços de climatização construída com React, TypeScript, Vite e Tailwind CSS.
+Landing page profissional para serviços de climatização, desenvolvida com React, TypeScript, Vite e Tailwind CSS. Foco em performance, SEO, acessibilidade e experiência do usuário.
 
-## 🚀 Otimizações SEO Implementadas
+## ✨ Visão Geral
 
-### Meta Tags Completas
+- **Design moderno e responsivo**
+- **Animações suaves com Framer Motion**
+- **SEO avançado e dados estruturados**
+- **Formulário integrado ao WhatsApp**
+- **Componentes reutilizáveis e organizados**
 
-- **Title otimizado**: Inclui palavras-chave principais e marca
-- **Meta description**: Descrição detalhada dos serviços
-- **Meta keywords**: Palavras-chave relevantes para o negócio
-- **Open Graph**: Para compartilhamento no Facebook/LinkedIn
-- **Twitter Cards**: Para compartilhamento no Twitter
-- **Canonical URL**: Evita conteúdo duplicado
+## 🛠️ Tecnologias Utilizadas
 
-### Structured Data (Schema.org)
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) (build ultra-rápido)
+- [Tailwind CSS](https://tailwindcss.com/) (utilitário de estilos)
+- [Framer Motion](https://www.framer.com/motion/) (animações)
+- [Lucide React](https://lucide.dev/) (ícones)
+- [React Router DOM](https://reactrouter.com/)
+- [Radix UI](https://www.radix-ui.com/) (componentes acessíveis)
 
-- **LocalBusiness**: Dados estruturados para empresa local
-- **BreadcrumbList**: Navegação estruturada
-- **Informações de contato**: Telefone, endereço, horário de funcionamento
-- **Serviços oferecidos**: Lista de serviços de climatização
-- **Área de atendimento**: Localização geográfica
+## 📦 Estrutura do Projeto
 
-### Arquivos de SEO
+```
+├── public/
+│   ├── favicon.ico
+│   ├── og-image.jpg
+│   └── ...
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── custom/
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Services.tsx
+│   │   │   ├── About.tsx
+│   │   │   ├── FAQ.tsx
+│   │   │   ├── ContactUs.tsx
+│   │   │   └── Footer.tsx
+│   │   └── ui/
+│   ├── pages/
+│   ├── hooks/
+│   ├── lib/
+│   └── main.tsx
+├── index.html
+├── package.json
+├── vite.config.ts
+└── ...
+```
 
-- **sitemap.xml**: Mapa do site para motores de busca
-- **robots.txt**: Instruções para crawlers
-- **site.webmanifest**: Configuração PWA
-- **.htaccess**: Configurações de servidor (Apache)
+## 🚀 Funcionalidades
 
-### Acessibilidade
+- **Hero**: Destaque dos serviços, CTA animado, badge de clientes satisfeitos
+- **Sobre (About)**: Apresentação da empresa, missão e área de atuação
+- **Serviços**: Cards animados, ícones destacados, separadores elegantes
+- **FAQ**: Perguntas frequentes com animação de acordeão
+- **Solicitar Orçamento**: Formulário integrado ao WhatsApp, campos obrigatórios, validação
+- **Footer**: Informações de contato, navegação, redes sociais, copyright
 
-- **Skip links**: Para navegação por teclado
-- **ARIA labels**: Descrições semânticas
-- **Lang attributes**: Idioma definido corretamente
+## 🔍 SEO & Performance
 
-### Performance
+- Meta tags completas (title, description, keywords, Open Graph, Twitter Cards)
+- Structured Data (Schema.org: LocalBusiness, BreadcrumbList)
+- Arquivos essenciais: sitemap.xml, robots.txt, site.webmanifest
+- Imagens otimizadas e lazy loading
+- Preconnect e cache headers
+- Acessibilidade: ARIA, skip links, contraste, navegação por teclado
 
-- **Preconnect**: Para fonts e recursos externos
-- **Compression**: Gzip/Deflate habilitado
-- **Cache headers**: Controle de cache otimizado
-- **Security headers**: Cabeçalhos de segurança
+## ☁️ Hospedagem & Deploy
 
-## 📋 Checklist de SEO Pendente
+Esta aplicação foi hospedada no **Amazon S3** como site estático, garantindo alta disponibilidade, escalabilidade e performance. O deploy foi automatizado via **CI/CD**, permitindo que cada alteração aprovada no repositório seja publicada automaticamente no ambiente de produção.
 
-### Imagens para completar o SEO:
+### Como funciona o fluxo de deploy:
 
-- [ ] `/public/favicon.ico`
-- [ ] `/public/favicon-16x16.png`
-- [ ] `/public/favicon-32x32.png`
-- [ ] `/public/apple-touch-icon.png`
-- [ ] `/public/android-chrome-192x192.png`
-- [ ] `/public/android-chrome-512x512.png`
-- [ ] `/public/og-image.jpg` (1200x630px)
+1. **Build do projeto:**
+   - O comando `npm run build` gera os arquivos otimizados em `/dist`.
+2. **CI/CD:**
+   - O workflow de **CI** (GitHub Actions) realiza verificação de formatação, lint e typecheck a cada push ou pull request na branch principal.
+   - O build e publicação dos arquivos estáticos no S3 são realizados automaticamente pelo **AWS CodeBuild**.
+   - O bucket S3 está configurado para servir o site estático.
+   - O site é distribuído globalmente pelo **Amazon CloudFront**, garantindo CDN, HTTPS
+3. **Atualização automática:**
+   - Cada push na branch principal dispara o pipeline e atualiza o site em produção.
 
-### Configurações a ajustar:
+## 📑 Licença
 
-- [ ] Atualizar URL canônica para domínio real
-- [ ] Configurar dados de contato reais (telefone, endereço)
-- [ ] Definir coordenadas geográficas corretas
-- [ ] Configurar contas de redes sociais
-- [ ] Configurar Google Analytics/Search Console
+Este projeto é de uso exclusivo da Polar Plus. Para uso comercial, entre em contato.
+
+---
+
+> [Desenvolvido por Jonathan](https://www.linkedin.com/in/jonathanamarante/)

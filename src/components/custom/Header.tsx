@@ -89,7 +89,11 @@ const Header = () => {
           <div className="flex items-center justify-between py-3 md:py-4">
             {/* Logo */}
             <div className="flex items-center">
-              <img src={logoImg} alt="Polar Plus - Logo" className="h-6 w-auto" />
+              <img
+                src={logoImg}
+                alt="Polar Plus - Logo"
+                className="h-6 w-auto"
+              />
             </div>
 
             {/* Desktop Navigation */}
@@ -118,7 +122,10 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <motion.div animate={isMenuOpen ? "open" : "closed"} transition={{ duration: 0.3 }}>
+              <motion.div
+                animate={isMenuOpen ? "open" : "closed"}
+                transition={{ duration: 0.3 }}
+              >
                 {isMenuOpen ? (
                   <motion.div
                     initial={{ rotate: 0 }}

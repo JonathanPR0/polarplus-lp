@@ -59,8 +59,9 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
             >
-              Somos uma empresa especializada em instalação, manutenção e consertos em geral de
-              ar-condicionado split e de janela, residencial e comercial.
+              Somos uma empresa especializada em instalação, manutenção e
+              consertos em geral de ar-condicionado split e de janela,
+              residencial e comercial.
             </motion.p>
 
             <motion.p
@@ -70,9 +71,9 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
-              Atuamos no mercado de Natal e grande Natal, realizando serviços com responsabilidade,
-              qualidade e compromisso. Garantindo conforto e bem estar através da qualidade dos
-              nossos serviços.
+              Atuamos no mercado de Natal e grande Natal, realizando serviços
+              com responsabilidade, qualidade e compromisso. Garantindo conforto
+              e bem estar através da qualidade dos nossos serviços.
             </motion.p>
 
             <motion.button
@@ -85,7 +86,10 @@ const About = () => {
               onClick={() => {
                 const contactSection = document.getElementById("contact");
                 if (contactSection) {
-                  const y = contactSection.getBoundingClientRect().top + window.scrollY - 64;
+                  const y =
+                    contactSection.getBoundingClientRect().top +
+                    window.scrollY -
+                    64;
                   window.scrollTo({ top: y, behavior: "smooth" });
                 }
               }}

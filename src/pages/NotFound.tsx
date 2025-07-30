@@ -20,7 +20,10 @@ const NotFound = () => {
   const [snowflakes, setSnowflakes] = useState<Snowflake[]>([]);
 
   useEffect(() => {
-    console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    console.error(
+      "404 Error: User attempted to access non-existent route:",
+      location.pathname,
+    );
   }, [location.pathname]);
 
   // Generate snowflakes
@@ -57,7 +60,7 @@ const NotFound = () => {
           y: flake.y > window.innerHeight ? -10 : flake.y + flake.speed,
           x: flake.x + Math.sin(flake.y * 0.005) * 0.3, // Movimento lateral mais sutil
           rotation: flake.rotation + flake.rotationSpeed,
-        }))
+        })),
       );
     };
 
@@ -106,7 +109,9 @@ const NotFound = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-6"
         >
-          <h1 className="text-8xl sm:text-9xl font-bold mb-4 text-white drop-shadow-2xl">404</h1>
+          <h1 className="text-8xl sm:text-9xl font-bold mb-4 text-white drop-shadow-2xl">
+            404
+          </h1>
         </motion.div>
 
         <motion.div
@@ -118,7 +123,9 @@ const NotFound = () => {
           <p className="text-xl sm:text-2xl text-blue-100 mb-2 font-medium">
             Oops! Página não encontrada
           </p>
-          <p className="text-blue-200 text-sm sm:text-base">Parece que você se perdeu</p>
+          <p className="text-blue-200 text-sm sm:text-base">
+            Parece que você se perdeu
+          </p>
         </motion.div>
 
         <motion.div

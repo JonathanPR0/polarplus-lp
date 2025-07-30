@@ -4,7 +4,10 @@
  * @param forUrl Se true, retorna apenas dígitos para uso em URLs (ex: whatsapp). Default: false
  * @returns O número formatado
  */
-export function normalizePhoneNumber(phone: string, forUrl: boolean = false): string {
+export function normalizePhoneNumber(
+  phone: string,
+  forUrl: boolean = false,
+): string {
   // Remove todos os caracteres não numéricos
   const digitsOnly = phone.replace(/\D/g, "");
 
@@ -20,14 +23,14 @@ export function normalizePhoneNumber(phone: string, forUrl: boolean = false): st
   // Para exibição, formata como (XX) XXXXX-XXXX para celular brasileiro
   if (digitsOnly.length === 11) {
     return `(${digitsOnly.substring(0, 2)}) ${digitsOnly.substring(2, 7)}-${digitsOnly.substring(
-      7
+      7,
     )}`;
   }
 
   // Para exibição, formata como (XX) XXXX-XXXX para telefone fixo brasileiro
   if (digitsOnly.length === 10) {
     return `(${digitsOnly.substring(0, 2)}) ${digitsOnly.substring(2, 6)}-${digitsOnly.substring(
-      6
+      6,
     )}`;
   }
 

@@ -5,7 +5,10 @@ import img from "../../assets/hero.webp";
 
 export const Hero = () => {
   return (
-    <section className="flex items-center justify-center w-full px-4 md:px-6 pb-2" id="hero">
+    <section
+      className="flex items-center justify-center w-full px-4 md:px-6 pb-2"
+      id="hero"
+    >
       <div className="w-full max-w-7xl">
         <motion.div
           className="flex bg-gradient-to-br from-primary/80 to-primary rounded-3xl overflow-hidden shadow-2xl min-h-[85dvh]"
@@ -17,6 +20,7 @@ export const Hero = () => {
             {/* Content Section */}
             <div className="my-auto flex-1 p-6 sm:p-8 md:p-12 lg:p-16 text-primary-foreground relative order-last lg:order-first">
               {/* Main Heading */}
+
               <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
                 initial={{ opacity: 0, y: 30 }}
@@ -33,8 +37,8 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Instalação, manutenção e limpeza de ar-condicionado com qualidade, agilidade e ótimo
-                custo-benefício.
+                Instalação, manutenção e limpeza de ar-condicionado com
+                qualidade, agilidade e ótimo custo-benefício.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -120,10 +124,17 @@ export const Hero = () => {
                 className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-3 sm:p-4 shadow-lg"
                 initial={{ opacity: 0, scale: 0, rotate: -10 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 0.3, delay: 0.5, type: "spring", stiffness: 90 }}
+                transition={{
+                  duration: 0.3,
+                  delay: 0.5,
+                  type: "spring",
+                  stiffness: 90,
+                }}
                 whileHover={{ scale: 1.05, rotate: 2 }}
               >
-                <div className="text-primary/70 font-bold text-xs sm:text-sm">+500 clientes</div>
+                <div className="text-primary/70 font-bold text-xs sm:text-sm">
+                  +500 clientes
+                </div>
                 <div className="text-primary/50 text-xs">satisfeitos</div>
               </motion.div>
             </motion.div>
