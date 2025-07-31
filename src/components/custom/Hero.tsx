@@ -5,7 +5,10 @@ import img from "../../assets/hero.webp";
 
 export const Hero = () => {
   return (
-    <section className="flex items-center justify-center w-full px-4 md:px-6 py-2" id="hero">
+    <section
+      className="flex items-center justify-center w-full px-4 md:px-6 py-2"
+      id="hero"
+    >
       <div className="w-full max-w-7xl">
         <motion.div
           className="flex bg-gradient-to-br from-primary/80 to-primary rounded-3xl overflow-hidden shadow-2xl min-h-[85dvh]"
@@ -34,8 +37,8 @@ export const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
-                Instalação, manutenção e limpeza de ar-condicionado com qualidade, agilidade e ótimo
-                custo-benefício.
+                Instalação, manutenção e limpeza de ar-condicionado com
+                qualidade, agilidade e ótimo custo-benefício.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -103,7 +106,9 @@ export const Hero = () => {
                 }}
                 whileHover={{ scale: 1.05, rotate: 2 }}
               >
-                <div className="text-primary/70 font-bold text-xs sm:text-sm">+300 clientes</div>
+                <div className="text-primary/70 font-bold text-xs sm:text-sm">
+                  +300 clientes
+                </div>
                 <div className="text-primary/50 text-xs">satisfeitos</div>
               </motion.div>
             </motion.div>

@@ -136,7 +136,10 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <motion.div animate={isMenuOpen ? "open" : "closed"} transition={{ duration: 0.3 }}>
+              <motion.div
+                animate={isMenuOpen ? "open" : "closed"}
+                transition={{ duration: 0.3 }}
+              >
                 {isMenuOpen ? (
                   <motion.div
                     initial={{ rotate: 0 }}

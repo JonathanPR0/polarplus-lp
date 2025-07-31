@@ -22,7 +22,8 @@ const Footer = () => {
               onClick={() => smoothScroll("hero")}
             />
             <p className="text-muted-foreground mb-4 max-w-xs">
-              Soluções em climatização para empresas e residências, garantindo conforto e bem-estar.
+              Soluções em climatização para empresas e residências, garantindo
+              conforto e bem-estar.
             </p>
           </div>
 
@@ -59,7 +60,9 @@ const Footer = () => {
 
           {/* Contato */}
           <div className="col-span-1">
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Contato</h3>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">
+              Contato
+            </h3>
             <ul className="space-y-3 text-sm">
               <li
                 className="flex items-start gap-2 cursor-pointer"
