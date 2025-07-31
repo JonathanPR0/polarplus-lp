@@ -25,8 +25,7 @@ const FAQ = () => {
         "Aceitamos dinheiro, cartões de crédito, cartões de débito, PIX, transferências bancárias e oferecemos planos de pagamento flexíveis para instalações maiores.",
     },
     {
-      question:
-        "Com que frequência devo fazer manutenção no meu sistema de AC?",
+      question: "Com que frequência devo fazer manutenção no meu sistema de AC?",
       answer:
         "Recomendamos manutenção profissional a cada 6 meses para desempenho ideal e eficiência energética. A manutenção regular previne grandes quebras, estende a vida útil do sistema e mantém a cobertura da garantia.",
     },
@@ -64,7 +63,7 @@ const FAQ = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             Perguntas Frequentes
           </motion.h2>
@@ -73,10 +72,9 @@ const FAQ = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
           >
-            Obtenha respostas para perguntas comuns sobre nossos serviços,
-            preços e políticas.
+            Obtenha respostas para perguntas comuns sobre nossos serviços, preços e políticas.
           </motion.p>
         </motion.div>
 

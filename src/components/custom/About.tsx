@@ -9,7 +9,7 @@ const About = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-4 md:gap-12">
           {/* Image Section - Left Side */}
           <motion.div
-            className="flex justify-center mb-10 lg:mb-0"
+            className="flex justify-center mb-6 lg:mb-0"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -47,7 +47,7 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
               Conheça a Polar Plus
             </motion.h2>
@@ -57,11 +57,10 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
             >
-              Somos uma empresa especializada em instalação, manutenção e
-              consertos em geral de ar-condicionado split e de janela,
-              residencial e comercial.
+              Somos uma empresa especializada em instalação, manutenção e consertos em geral de
+              ar-condicionado split e de janela, residencial e comercial.
             </motion.p>
 
             <motion.p
@@ -69,11 +68,11 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.3 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
-              Atuamos no mercado de Natal e grande Natal, realizando serviços
-              com responsabilidade, qualidade e compromisso. Garantindo conforto
-              e bem estar através da qualidade dos nossos serviços.
+              Atuamos no mercado de Natal e grande Natal, realizando serviços com responsabilidade,
+              qualidade e compromisso. Garantindo conforto e bem estar através da qualidade dos
+              nossos serviços.
             </motion.p>
 
             <motion.button
@@ -81,15 +80,12 @@ const About = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.4 }}
               whileHover={{ x: 5 }}
               onClick={() => {
                 const contactSection = document.getElementById("contact");
                 if (contactSection) {
-                  const y =
-                    contactSection.getBoundingClientRect().top +
-                    window.scrollY -
-                    64;
+                  const y = contactSection.getBoundingClientRect().top + window.scrollY - 64;
                   window.scrollTo({ top: y, behavior: "smooth" });
                 }
               }}

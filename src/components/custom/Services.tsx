@@ -9,7 +9,7 @@ const Services = () => {
       description:
         "Realizamos a instalação de sistemas de ar-condicionado utilizando as melhores práticas.",
       icon: Wrench,
-      delay: 0.2,
+      delay: 0.1,
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ const Services = () => {
       description:
         "Manutenção preventiva e reparo rápido para manter seus sistemas funcionando perfeitamente.",
       icon: Settings,
-      delay: 0.4,
+      delay: 0.2,
     },
     {
       id: 3,
@@ -25,15 +25,12 @@ const Services = () => {
       description:
         "Limpeza profunda e serviços de higienização para serpentinas, bandejas e filtros.",
       icon: Sparkles,
-      delay: 0.6,
+      delay: 0.3,
     },
   ];
 
   return (
-    <section
-      className="py-20 lg:py-24 bg-gradient-to-b from-background to-muted/30"
-      id="services"
-    >
+    <section className="py-20 lg:py-24 bg-gradient-to-b from-background to-muted/30" id="services">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Header */}
         <motion.div
@@ -41,13 +38,13 @@ const Services = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
             className="inline-block mb-4"
           >
             <span className="bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-medium">
@@ -70,9 +67,8 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.3 }}
           >
-            Serviços profissionais de climatização sob medida para suas
-            necessidades, garantindo conforto e eficiência ideais para seu
-            espaço.
+            Serviços profissionais de climatização sob medida para suas necessidades, garantindo
+            conforto e eficiência ideais para seu espaço.
           </motion.p>
         </motion.div>
 
@@ -111,7 +107,7 @@ const Services = () => {
                       type: "spring",
                       stiffness: 200,
                       damping: 15,
-                      delay: service.delay + 0.2,
+                      delay: service.delay + 0.1,
                     }}
                     whileHover={{
                       scale: 1.1,
@@ -134,7 +130,7 @@ const Services = () => {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: service.delay + 0.1 }}
+                      transition={{ duration: 0.3, delay: service.delay + 0.1 }}
                     >
                       {service.title}
                     </motion.h3>
@@ -143,7 +139,7 @@ const Services = () => {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: service.delay + 0.2 }}
+                      transition={{ duration: 0.3, delay: service.delay + 0.2 }}
                     >
                       {service.description}
                     </motion.p>

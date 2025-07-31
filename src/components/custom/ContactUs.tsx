@@ -26,9 +26,7 @@ const ContactUs = () => {
   });
 
   // Função para atualizar o estado
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -64,7 +62,7 @@ const ContactUs = () => {
       `${formData.descricao ? `A seguir está uma breve descrição: ${formData.descricao}` : ""}`;
 
     const whatsappURL = `https://wa.me/${contactInfo.phoneNumber}?text=${encodeURIComponent(
-      message,
+      message
     )}`;
     window.open(whatsappURL, "_blank");
   };
@@ -106,8 +104,8 @@ const ContactUs = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Soluções em climatização personalizadas para seu conforto. Solicite
-            agora um orçamento sem compromisso.
+            Soluções em climatização personalizadas para seu conforto. Solicite agora um orçamento
+            sem compromisso.
           </motion.p>
         </motion.div>
 
@@ -124,10 +122,8 @@ const ContactUs = () => {
               onSubmit={handleSubmit}
               className="flex gap-5 md:gap-6 flex-col justify-between h-full"
             >
-              <h3 className="text-2xl font-bold text-primary-foreground">
-                Enviar Solicitação
-              </h3>
-              <div className="flex gap-3 md:gap-5 w-full">
+              <h3 className="text-2xl font-bold text-primary-foreground">Enviar Solicitação</h3>
+              <div className="flex flex-col md:flex-row gap-3 md:gap-5 w-full">
                 <div className="flex-1 flex flex-col gap-2">
                   <Label htmlFor="nome" className="text-primary-foreground">
                     Nome <span className="text-accent">*</span>
@@ -143,10 +139,7 @@ const ContactUs = () => {
                   />
                 </div>
                 <div className="flex-1 flex flex-col gap-2">
-                  <Label
-                    htmlFor="tipoServico"
-                    className="text-primary-foreground"
-                  >
+                  <Label htmlFor="tipoServico" className="text-primary-foreground">
                     Tipo de Serviço <span className="text-accent">*</span>
                   </Label>
                   <Select
@@ -238,9 +231,7 @@ const ContactUs = () => {
                         window.open(whatsappURL, "_blank");
                       }}
                     >
-                      {normalizePhoneNumber(
-                        contactInfo.phoneNumber.split("55")[1],
-                      )}
+                      {normalizePhoneNumber(contactInfo.phoneNumber.split("55")[1])}
                     </p>
                   </div>
                 </motion.div>
@@ -256,9 +247,7 @@ const ContactUs = () => {
                   <div>
                     <h4 className="font-semibold text-lg">E-mail</h4>
                     <p
-                      onClick={() =>
-                        (window.location.href = `mailto:${contactInfo.email}`)
-                      }
+                      onClick={() => (window.location.href = `mailto:${contactInfo.email}`)}
                       className="text-primary-foreground/80 hover:text-primary-foreground/70 cursor-pointer"
                     >
                       {contactInfo.email}
@@ -275,9 +264,7 @@ const ContactUs = () => {
                     <MapPin className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">
-                      Área de Atendimento
-                    </h4>
+                    <h4 className="font-semibold text-lg">Área de Atendimento</h4>
                     <p className="text-primary-foreground/80 hover:text-primary-foreground/70 cursor-pointer">
                       Natal e Grande Natal
                     </p>
@@ -293,9 +280,7 @@ const ContactUs = () => {
                     <Clock className="h-6 w-6 text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">
-                      Horário de Funcionamento
-                    </h4>
+                    <h4 className="font-semibold text-lg">Horário de Funcionamento</h4>
                     <p className="text-primary-foreground/80 hover:text-primary-foreground/70 cursor-pointer">
                       Seg-Sex: 8:00 - 17:00
                     </p>
