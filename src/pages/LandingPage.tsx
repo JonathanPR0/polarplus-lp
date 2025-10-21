@@ -8,7 +8,7 @@ import Services from "@/components/custom/Services";
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-[100dvh]">
       <Header />
       <main>
         <Hero />

@@ -2,8 +2,9 @@ import contactInfo from "@/consts/contactInfo";
 import axios from "axios";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { Calendar, ClipboardCheck, ShieldCheck } from "lucide-react";
 import { useEffect, useState } from "react";
-import { FaCalendarAlt, FaClipboardCheck, FaClock, FaShieldAlt, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 import logo from "../assets/logo.png";
 
@@ -88,45 +89,14 @@ const ServiceDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
-        <div className="w-16 h-16 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mb-6"></div>
+      <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+        <div className="w-16 h-16 border-8 border-gray-200 border-t-accent rounded-full animate-spin mb-6"></div>
         <p className="text-gray-600 font-medium text-lg">Carregando detalhes do serviço...</p>
       </div>
     );
   }
 
-  if (error) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4 gap-6">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
-          <svg
-            className="w-16 h-16 text-red-500 mx-auto mb-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
-          </svg>
-          <h2 className="text-xl font-bold text-red-600 mb-2">Ocorreu um erro</h2>
-          <p className="mb-6 text-gray-600">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition-colors w-full"
-          >
-            Tentar novamente
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  if (!service) {
+  if (!service || error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
         <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
@@ -145,12 +115,12 @@ const ServiceDetail: React.FC = () => {
             ></path>
           </svg>
           <h2 className="text-xl font-bold text-gray-800 mb-2">Serviço não encontrado</h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-foreground/80 mb-6">
             O serviço que você está procurando não existe ou foi removido.
           </p>
           <button
-            onClick={() => window.history.back()}
-            className="bg-gray-600 text-white px-6 py-2 rounded-md font-medium hover:bg-gray-700 transition-colors w-full"
+            onClick={() => navigate("/")}
+            className="bg-foreground/80 text-white px-6 py-2 rounded-md font-medium hover:bg-gray-700 transition-colors w-full"
           >
             Voltar
           </button>
@@ -169,10 +139,10 @@ const ServiceDetail: React.FC = () => {
           onClick={() => navigate("/")}
         />
 
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-14 sm:mb-0">
           {/* Cabeçalho */}
           <div className="bg-primary p-6 text-primary-foreground">
-            <h1 className="text-2xl font-bold">Detalhes do Serviço</h1>
+            <h1 className="text-xl font-bold">Detalhes do Serviço</h1>
           </div>
 
           {/* Corpo */}
@@ -186,7 +156,7 @@ const ServiceDetail: React.FC = () => {
 
               <div>
                 <h2 className="font-semibold">Categoria</h2>
-                <span className="mt-1 inline-flex items-center px-3 py-1 rounded-full font-medium bg-blue-100 text-blue-800">
+                <span className="mt-1 inline-flex items-center px-3 py-1 rounded-full font-medium bg-accent/20 text-accent-foreground/70">
                   {service.category?.name || "Não categorizado"}
                 </span>
               </div>
@@ -201,7 +171,7 @@ const ServiceDetail: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <FaCalendarAlt className="h-5 w-5 text-orange-500" />
+                    <Calendar className="h-5 w-5 text-orange-500" />
                   </div>
                   <div className="ml-3">
                     <h3 className="font-medium">Agendado para</h3>
@@ -228,7 +198,7 @@ const ServiceDetail: React.FC = () => {
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <FaClipboardCheck className="h-5 w-5 text-green-600" />
+                    <ClipboardCheck className="h-5 w-5 text-green-600" />
                   </div>
                   <div className="ml-3">
                     <h3 className="font-medium">Executado em</h3>
@@ -238,7 +208,7 @@ const ServiceDetail: React.FC = () => {
 
                 <div className="flex items-start">
                   <div className="flex-shrink-0 mt-1">
-                    <FaShieldAlt className="h-5 w-5 text-violet-500" />
+                    <ShieldCheck className="h-5 w-5 text-purple-500" />
                   </div>
                   <div className="ml-3">
                     <h3 className="font-medium">Garantia até</h3>
@@ -264,27 +234,27 @@ const ServiceDetail: React.FC = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 mt-1">
-                    <FaClock className="h-5 w-5" />
-                  </div>
-                  <div className="ml-3">
-                    <h3 className="font-medium">Criado em</h3>
-                    <p className="mt-1 text-gray-900">{formatDate(service.createdAt)}</p>
-                  </div>
-                </div>
               </div>
             </div>
 
             {/* Ação para contato */}
             <button
               onClick={handleContactWhatsApp}
-              className="w-full md:w-auto flex items-center justify-center bg-green-600 hover:bg-green-600/90 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all transform"
+              className="hidden sm:flex w-full md:w-auto items-center justify-center bg-green-600 hover:bg-green-600/90 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all transform"
             >
               <FaWhatsapp className="mr-2 text-lg sm:text-xl" size={28} />
               Entrar em Contato pelo WhatsApp
             </button>
+            {/* Botão de contato fixo na parte inferior */}
+            <div className="fixed sm:hidden bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3">
+              <button
+                onClick={handleContactWhatsApp}
+                className="w-full flex items-center justify-center bg-green-600 text-white font-medium py-3 rounded-xl active:scale-95 transition-transform shadow-lg"
+              >
+                <FaWhatsapp className="text-xl mr-2" />
+                Contato via WhatsApp
+              </button>
+            </div>
           </div>
         </div>
       </div>
