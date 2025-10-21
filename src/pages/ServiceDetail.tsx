@@ -1,4 +1,3 @@
-import logo from "@/assets/logo.webp";
 import contactInfo from "@/consts/contactInfo";
 import axios from "axios";
 import { format } from "date-fns";
@@ -6,6 +5,7 @@ import { ptBR } from "date-fns/locale";
 import { useEffect, useState } from "react";
 import { FaCalendarAlt, FaClipboardCheck, FaClock, FaShieldAlt, FaWhatsapp } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 interface Category {
   name: string;
